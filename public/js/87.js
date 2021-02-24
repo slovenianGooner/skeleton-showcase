@@ -1,0 +1,1 @@
+(self.webpackChunk=self.webpackChunk||[]).push([[87],{6087:(e,l,s)=>{"use strict";s.r(l),s.d(l,{default:()=>t});const t=(0,s(1900).Z)({},(function(){var e=this,l=e.$createElement;return(e._self._c||l)("div",[e._v("Lists")])}),[],!1,null,null,null).exports}}]);

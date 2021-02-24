@@ -1,5 +1,5 @@
 module.exports = {
-    purge: [],
+    purge: ["./resources/js/**/*.vue", "./node_modules/skelly/**/*.vue"],
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {}
