@@ -128,7 +128,7 @@
           "
           class="px-4 sm:px-6 border-t py-3"
         >
-          <div class="grid grid-cols-3 gap-3 mb-3">
+          <div class="grid md:grid-cols-3 gap-3 mb-3">
             <div>
               <x-input-label for="job">Job</x-input-label>
               <div class="mt-1">
