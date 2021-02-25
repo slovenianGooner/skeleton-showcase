@@ -12,12 +12,22 @@ Skelly.getComponents().forEach(component => {
 import PortalVue from "portal-vue";
 Vue.use(PortalVue);
 
+// Query
+const query = require("query-string");
+Vue.prototype.$query = query;
+
+// Route
+Vue.prototype.$route = route;
+
 // Layout
 import Layout from "./Shared/Layout";
 
 // Sample mixin to say things
 Vue.mixin({
     methods: {
+        query() {
+            return this.$query.parse(window.location.search);
+        },
         say(input) {
             console.log(input);
         }

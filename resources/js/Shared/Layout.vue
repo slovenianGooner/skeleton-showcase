@@ -28,7 +28,7 @@
         <x-nav-item inertia title="Photo" href="/inputs/photo" />
       </x-nav-item>
       <x-nav-item inertia title="Modals" icon="annotation" href="/modals" />
-      <x-nav-item inertia title="Lists" icon="list" href="/lists" />
+      <x-nav-item inertia title="Lists" icon="list" :href="$route('lists')" />
     </template>
     <template #loading>
       <x-loading-screen v-model="loading" />

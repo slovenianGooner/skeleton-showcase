@@ -26,7 +26,7 @@
       <div class="prose max-w-none mt-2 mb-8">
         <pre>{{ formButtonExample }}</pre>
       </div>
-      <div class="mt-4 flex items-center space-x-4">
+      <div class="mt-4 flex flex-wrap items-center space-x-4">
         <x-button-form-xs color="red" text-color="text-white">
           Form
         </x-button-form-xs>
@@ -51,7 +51,7 @@
       <div class="prose max-w-none mt-2 mb-8">
         <pre>{{ linkButtonExample }}</pre>
       </div>
-      <div class="mt-4 flex items-center space-x-4">
+      <div class="mt-4 flex flex-wrap items-center space-x-4">
         <x-button-link-xs color="red" text-color="text-white">
           Link
         </x-button-link-xs>
