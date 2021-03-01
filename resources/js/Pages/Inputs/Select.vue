@@ -62,7 +62,6 @@
           <x-input-select-button
             :options="languages"
             v-model="form.language"
-            @click="say(form.language)"
             button="Submit"
           />
         </div>

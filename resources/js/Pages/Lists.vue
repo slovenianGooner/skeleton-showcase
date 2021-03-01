@@ -46,7 +46,7 @@
         />
       </template>
     </x-list-card>
-    <div class="mt-8 prose max-w-none">
+    <div class="mt-8 prose">
       <pre>{{ cardListExample }}</pre>
     </div>
     <h2 class="mt-8 font-semibold text-2xl">Separate card list</h2>
@@ -81,7 +81,7 @@
         />
       </template>
     </x-list-separate-card>
-    <div class="mt-8 prose max-w-none">
+    <div class="mt-8 prose">
       <pre>{{ separateCardListExample }}</pre>
     </div>
     <h2 class="mt-8 font-semibold text-2xl">Card list with filter</h2>

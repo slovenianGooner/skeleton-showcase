@@ -26,9 +26,16 @@
         <x-nav-item inertia title="Checkbox" href="/inputs/checkbox" />
         <x-nav-item inertia title="File" href="/inputs/file" />
         <x-nav-item inertia title="Photo" href="/inputs/photo" />
+        <x-nav-item inertia title="List" href="/inputs/list" />
+        <x-nav-item
+          inertia
+          title="Custom Select"
+          href="/inputs/custom-select"
+        />
       </x-nav-item>
       <x-nav-item inertia title="Modals" icon="annotation" href="/modals" />
-      <x-nav-item inertia title="Lists" icon="list" :href="$route('lists')" />
+      <x-nav-item inertia title="Lists" icon="list" href="/lists" />
+      <x-nav-item inertia title="Misc" icon="sun" href="/misc" />
     </template>
     <template #loading>
       <x-loading-screen v-model="loading" />

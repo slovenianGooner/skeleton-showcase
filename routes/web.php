@@ -36,6 +36,8 @@ Route::inertia("inputs/select", "Inputs/Select");
 Route::inertia("inputs/checkbox", "Inputs/Checkbox");
 Route::inertia("inputs/file", "Inputs/File");
 Route::inertia("inputs/photo", "Inputs/Photo");
+Route::inertia("inputs/list", "Inputs/List");
+Route::inertia("inputs/custom-select", "Inputs/CustomSelect");
 Route::inertia("modals", "Modals");
 
 Route::get("lists", function () {
@@ -61,7 +63,9 @@ Route::get("lists", function () {
     return inertia("Lists", [
         "items" => $items->paginate(5)->appends(request()->query())
     ]);
-})->name("lists");
+});
+
+Route::delayedInertia('misc', 'Misc');
 
 Route::post("modal", function () {
     return redirect("/modals")->with("success", "Modal was submitted.");
