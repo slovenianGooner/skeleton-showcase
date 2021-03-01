@@ -49,12 +49,13 @@
     </x-card>
     <x-card class="mt-5" :overflows="false" title="Custom select with search">
       <div>
-        <x-input-label>Languages</x-input-label>
+        <x-input-label>Language</x-input-label>
         <div class="mt-1">
           <x-input-custom-select
-            multiple
-            v-model="form.languages"
+            v-model="form.language"
             :options="languages"
+            :value-resolver="(item) => item"
+            :search="true"
           />
         </div>
       </div>
@@ -72,6 +73,7 @@ export default {
         country: "AT",
         countries: ["AT"],
         languages: [],
+        language: null,
       },
       countries: [
         {
