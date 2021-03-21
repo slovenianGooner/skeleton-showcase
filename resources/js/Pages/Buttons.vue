@@ -12,8 +12,8 @@
           href: 'buttons',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     ></x-page-header>
     <x-card class="mt-5" title="Form">
       <div class="prose prose-red">

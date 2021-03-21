@@ -12,8 +12,8 @@
           href: '/misc',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     />
     <x-section class="mt-4" title="Section" collapsed>
       <div class="prose max-w-none">
@@ -31,17 +31,45 @@
     <div class="prose mt-8 max-w-none">
       <pre>{{ sectionExample }}</pre>
     </div>
+
+    <x-card class="mt-5" title="Toast notification">
+      <portal to="modal">
+        <x-toast
+          :hide="3000"
+          v-if="showToast"
+          @hidden="showToast = false"
+          type="success"
+        >
+          <p class="text-sm font-medium text-gray-900">Successfully saved!</p>
+          <p class="mt-1 text-sm text-gray-500">
+            Anyone with a link can now view this file.
+          </p>
+        </x-toast>
+      </portal>
+      <div class="flex space-x-2">
+        <x-button-form-md @click="showToast = true">
+          Show toast
+        </x-button-form-md>
+      </div>
+      <div class="prose mt-8 max-w-none">
+        <pre>{{ toastExample }}</pre>
+      </div>
+    </x-card>
   </div>
 </template>
 <script>
 export default {
   data() {
     return {
+      showToast: false,
       sectionExample: `<x-section class="mt-4" title="Section" collapsed>
     <div class="prose max-w-none">
         Content.
     </div>
 </x-section>`,
+      toastExample: `<x-toast class="bottom-0 right-0" :hide="5000">
+      Success message.
+</x-toast>`,
     };
   },
 };

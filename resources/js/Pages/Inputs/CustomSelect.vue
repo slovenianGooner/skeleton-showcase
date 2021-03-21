@@ -12,8 +12,8 @@
           href: '/inputs/custom-select',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     />
     <x-card class="mt-5" :overflows="false" title="Custom Select">
       <div>
@@ -54,13 +54,14 @@
           <x-input-custom-select
             v-model="form.language"
             :options="languages"
-            :value-resolver="(item) => item"
+            value-resolver="value"
+            label-resolver="title"
             :search="true"
           />
         </div>
       </div>
       <div class="prose max-w-none mt-8">
-        <pre>{{ examples.customSelect }}</pre>
+        <pre>{{ examples.customSelectWithSearch }}</pre>
       </div>
     </x-card>
   </div>
@@ -114,6 +115,17 @@ export default {
             v-model="form.languages"
             :options="languages"
           />
+    </div>
+</div>`,
+        customSelectWithSearch: `<div>
+    <x-input-label>Language</x-input-label>
+    <div class="mt-1">
+        <x-input-custom-select
+            v-model="form.language"
+            :options="languages"
+            :value-resolver="(item) => item"
+            :search="true"
+        />
     </div>
 </div>`,
       },

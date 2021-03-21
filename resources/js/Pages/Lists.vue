@@ -12,8 +12,8 @@
           href: '/lists',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     />
     <h2 class="mt-8 font-semibold text-2xl">Card list</h2>
     <x-list-card class="mt-4" :data="Object.values($page.props.items.data)">
@@ -39,7 +39,7 @@
           class="px-4 py-3 sm:px-6"
           :data="$page.props.items"
           @change="
-            $inertia.visit($event.url, {
+            $inertia.get($event.url, {
               preserveScroll: true,
             })
           "
@@ -74,7 +74,7 @@
         <x-list-pagination
           :data="$page.props.items"
           @change="
-            $inertia.visit($event.url, {
+            $inertia.get($event.url, {
               preserveScroll: true,
             })
           "
@@ -92,7 +92,7 @@
             class="flex-1"
             :value="query().search"
             @submit="
-              $inertia.visit(
+              $inertia.get(
                 $route($route().current(), {
                   ...query(),
                   search: $event,
@@ -116,7 +116,7 @@
           ref="filter"
           :filters="filters"
           @clear="
-            $inertia.visit(
+            $inertia.get(
               $route($route().current(), {
                 ...$event,
                 page: 1,
@@ -176,7 +176,7 @@
           class="px-4 py-3 sm:px-6"
           :data="$page.props.items"
           @change="
-            $inertia.visit($event.url, {
+            $inertia.get($event.url, {
               preserveScroll: true,
             })
           "
@@ -211,7 +211,7 @@ export default {
             class="px-4 py-3 sm:px-6"
             :value="query().search"
             @submit="
-                $inertia.visit(
+                $inertia.get(
                     $route($route().current(), {
                         ...query(),
                         search: $event,
@@ -228,7 +228,7 @@ export default {
         <x-list-pagination
             class="px-4 py-3 sm:px-6"
             :data="items"
-            @change="$inertia.visit($event.url)"
+            @change="$inertia.get($event.url)"
         />
     </template>
 </x-list-card>`,
@@ -237,7 +237,7 @@ export default {
         <x-list-search
             :value="query().search"
             @submit="
-                $inertia.visit(
+                $inertia.get(
                     $route($route().current(), {
                         ...query(),
                         search: $event,
@@ -253,7 +253,7 @@ export default {
     <template #footer>
         <x-list-pagination
             :data="items"
-            @change="$inertia.visit($event.url)"
+            @change="$inertia.get($event.url)"
         />
     </template>
 </x-list-separate-card>`,
@@ -268,7 +268,7 @@ export default {
     ref="filter"
     :filters="filters"
     @clear="
-        $inertia.visit(
+        $inertia.get(
             $route($route().current(), {
                 ...$event,
                 page: 1,

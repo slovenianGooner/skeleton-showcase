@@ -12,12 +12,11 @@
           href: '/inputs/photo',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     />
     <x-card title="List" class="mt-8">
       <x-input-list
-        :collapsed="false"
         v-model="list"
         :assign-missing-props="true"
         :default="{ name: null, surname: null, toys: [] }"

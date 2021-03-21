@@ -4,7 +4,7 @@ import Vue from "vue";
 Vue.use(plugin);
 
 // Register Skelly components
-import Skelly from "skelly";
+import Skelly from "sg-skelly";
 Skelly.getComponents().forEach(component => {
     Vue.component(component.name, component.config);
 });

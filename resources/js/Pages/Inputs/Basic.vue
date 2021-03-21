@@ -12,8 +12,8 @@
           href: '/inputs/basic',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     ></x-page-header>
 
     <!-- Inputs -->
@@ -50,6 +50,16 @@
           <x-input-errors :errors="errors.username" />
         </div>
       </div>
+      <h3 class="mt-8 font-semibold">Textarea</h3>
+      <div class="prose max-w-none mt-2 mb-8">
+        <pre>{{ examples.textareaInput }}</pre>
+      </div>
+      <div>
+        <x-input-label for="code"> Code </x-input-label>
+        <div class="mt-1">
+          <x-input-textarea type="text" v-model="form.code" rows="5" />
+        </div>
+      </div>
       <h3 class="mt-8 font-semibold">Text Input With Button</h3>
       <div class="prose max-w-none mt-2 mb-8">
         <pre>{{ examples.textInputWithButton }}</pre>
@@ -74,6 +84,7 @@ export default {
     return {
       form: {
         username: null,
+        code: null,
       },
       errors: {
         username: ["The username field is required."],
@@ -87,6 +98,12 @@ export default {
             v-model="form.username"
         />
         <x-input-errors />
+    </div>
+</div>`,
+        textareaInput: `<div>
+    <x-input-label for="code"> Code </x-input-label>
+    <div class="mt-1">
+        <x-input-textarea type="text" v-model="form.code" rows="5" />
     </div>
 </div>`,
         textInputWithError: `<div>

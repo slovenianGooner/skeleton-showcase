@@ -12,8 +12,8 @@
           href: '/inputs/photo',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     ></x-page-header>
 
     <!-- Inputs -->

@@ -12,8 +12,8 @@
           href: '/modals',
         },
       ]"
-      @back="$inertia.visit($event)"
-      @navigate="$inertia.visit($event)"
+      @back="$inertia.get($event)"
+      @navigate="$inertia.get($event)"
     />
     <x-alert-success v-if="$page.props.flash.success" class="mt-4">
       <template>
