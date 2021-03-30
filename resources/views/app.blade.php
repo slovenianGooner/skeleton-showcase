@@ -8,13 +8,13 @@
 
   <title>Skeleton Showcase</title>
   <link rel="stylesheet"
-        href="{{ mix('css/app.css') }}">
+        href="{{ mix('/css/app.css') }}">
 </head>
 
 <body>
   @inertia
   @routes
-  <script src="{{ mix('js/app.js') }}"></script>
+  <script src="{{ mix('/js/app.js') }}"></script>
 </body>
 
 </html>
