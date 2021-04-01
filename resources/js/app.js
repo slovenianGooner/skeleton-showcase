@@ -1,52 +1,52 @@
-import { App, plugin } from "@inertiajs/inertia-vue";
-import Vue from "vue";
+import { createApp, h } from "vue";
+import { App, plugin } from "@inertiajs/inertia-vue3";
 
-Vue.use(plugin);
-
-// Register Skelly components
-import Skelly from "sg-skelly";
-Skelly.getComponents().forEach(component => {
-    Vue.component(component.name, component.config);
-});
-
-import PortalVue from "portal-vue";
-Vue.use(PortalVue);
-
-// Query
-const query = require("query-string");
-Vue.prototype.$query = query;
-
-// Route
-Vue.prototype.$route = route;
-
-// Layout
 import Layout from "./Shared/Layout";
-
-// Sample mixin to say things
-Vue.mixin({
-    methods: {
-        query() {
-            return this.$query.parse(window.location.search);
-        },
-        say(input) {
-            console.log(input);
-        }
-    }
-});
 
 const el = document.getElementById("app");
 
-new Vue({
-    render: h =>
+const app = createApp({
+    render: () =>
         h(App, {
-            props: {
-                initialPage: JSON.parse(el.dataset.page),
-                resolveComponent: name =>
-                    import(`./Pages/${name}`).then(({ default: page }) => {
-                        page.layout =
-                            page.layout === undefined ? Layout : page.layout;
-                        return page;
-                    })
-            }
-        })
-}).$mount(el);
+            initialPage: JSON.parse(el.dataset.page),
+            resolveComponent: (name) =>
+                import(`./Pages/${name}`).then(({ default: page }) => {
+                    page.layout =
+                        page.layout === undefined ? Layout : page.layout;
+                    return page;
+                }),
+        }),
+}).use(plugin);
+
+import Skelly from "sg-skelly";
+Skelly.getComponents().forEach((component) => {
+    app.component(component.name, component.config);
+});
+
+Skelly.getSolidIcons().forEach((component) => {
+    app.component(component.name, component.config);
+});
+
+Skelly.getOutlineIcons().forEach((component) => {
+    app.component(component.name, component.config);
+});
+
+// Query
+const query = require("query-string");
+app.mixin({
+    data() {
+        return {
+            route: route,
+        };
+    },
+    methods: {
+        say(say) {
+            console.log(say);
+        },
+        query() {
+            return query.parse(window.location.search);
+        },
+    },
+});
+
+app.mount(el);

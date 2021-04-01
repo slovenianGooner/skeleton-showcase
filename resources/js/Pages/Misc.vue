@@ -1,6 +1,6 @@
 <template>
   <div class="p-8">
-    <x-page-header
+    <XPageHeader
       title="Misc"
       :breadcrumbs="[
         {
@@ -15,7 +15,7 @@
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
     />
-    <x-section class="mt-4" title="Section" collapsed>
+    <XSection class="mt-4" title="Section" collapsed>
       <div class="prose max-w-none">
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industry's standard dummy text ever
@@ -27,14 +27,11 @@
         with desktop publishing software like Aldus PageMaker including versions
         of Lorem Ipsum.
       </div>
-    </x-section>
-    <div class="prose mt-8 max-w-none">
-      <pre>{{ sectionExample }}</pre>
-    </div>
+    </XSection>
 
-    <x-card class="mt-5" title="Toast notification">
-      <portal to="modal">
-        <x-toast
+    <XCard class="mt-5" title="Toast notification">
+      <teleport to="body">
+        <XToast
           :hide="3000"
           v-if="showToast"
           @hidden="showToast = false"
@@ -44,17 +41,12 @@
           <p class="mt-1 text-sm text-gray-500">
             Anyone with a link can now view this file.
           </p>
-        </x-toast>
-      </portal>
+        </XToast>
+      </teleport>
       <div class="flex space-x-2">
-        <x-button-form-md @click="showToast = true">
-          Show toast
-        </x-button-form-md>
+        <XButtonForm @click="showToast = true"> Show toast </XButtonForm>
       </div>
-      <div class="prose mt-8 max-w-none">
-        <pre>{{ toastExample }}</pre>
-      </div>
-    </x-card>
+    </XCard>
   </div>
 </template>
 <script>
@@ -62,14 +54,6 @@ export default {
   data() {
     return {
       showToast: false,
-      sectionExample: `<x-section class="mt-4" title="Section" collapsed>
-    <div class="prose max-w-none">
-        Content.
-    </div>
-</x-section>`,
-      toastExample: `<x-toast class="bottom-0 right-0" :hide="5000">
-      Success message.
-</x-toast>`,
     };
   },
 };

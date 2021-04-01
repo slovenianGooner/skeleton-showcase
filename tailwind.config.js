@@ -2,10 +2,13 @@ module.exports = {
     purge: ["./resources/js/**/*.vue", "./node_modules/sg-skelly/**/*.vue"],
     darkMode: false, // or 'media' or 'class'
     theme: {
-        extend: {}
+        extend: {},
     },
     variants: {
-        extend: {}
+        extend: {},
     },
-    plugins: [require("@tailwindcss/forms"), require("@tailwindcss/typography")]
+    plugins: [
+        require("@tailwindcss/forms"),
+        require("@tailwindcss/typography"),
+    ],
 };

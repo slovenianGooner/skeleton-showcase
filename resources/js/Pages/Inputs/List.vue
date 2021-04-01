@@ -1,6 +1,6 @@
 <template>
   <div class="p-8">
-    <x-page-header
+    <XPageHeader
       title="Inputs"
       :breadcrumbs="[
         {
@@ -15,63 +15,51 @@
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
     />
-    <x-card title="List" class="mt-8">
-      <x-input-list
+    <XCard title="List" class="mt-8">
+      <XInputList
         v-model="list"
         :assign-missing-props="true"
         :default="{ name: null, surname: null, toys: [] }"
       >
-        <template #default="{ item, index }">
+        <template #default="{ item }">
           <div>
             <div>
-              <x-input-label :for="'name' + item.uid">Name</x-input-label>
+              <XInputLabel :for="'name' + item.uid">Name</XInputLabel>
               <div class="mt-1">
-                <x-input-text :id="'name' + item.uid" v-model="item.name" />
+                <XInputText :id="'name' + item.uid" v-model="item.name" />
               </div>
             </div>
             <div class="mt-4">
-              <x-input-label :for="'surname' + item.uid">Surname</x-input-label>
+              <XInputLabel :for="'surname' + item.uid">Surname</XInputLabel>
               <div class="mt-1">
-                <x-input-text
-                  :id="'surname' + item.uid"
-                  v-model="item.surname"
-                />
+                <XInputText :id="'surname' + item.uid" v-model="item.surname" />
               </div>
             </div>
             <div class="mt-4">
-              <x-input-label :for="'toys' + item.uid">Toys</x-input-label>
+              <XInputLabel :for="'toys' + item.uid">Toys</XInputLabel>
               <div class="mt-1">
-                <x-input-simple-list
+                <XInputSimpleList
                   :id="'toys' + item.uid"
                   :extra-data="item"
                   v-model="item.toys"
                 >
-                  <template #default="{ item, index, extraData }">
-                    <x-input-text
-                      :id="'value' + item.uid"
-                      v-model="item.value"
-                    />
+                  <template #default="{ item }">
+                    <XInputText :id="'value' + item.uid" v-model="item.value" />
                   </template>
-                </x-input-simple-list>
+                </XInputSimpleList>
               </div>
             </div>
           </div>
         </template>
-      </x-input-list>
-      <div class="mt-8 prose max-w-none">
-        <pre>{{ examples.list }}</pre>
-      </div>
-    </x-card>
-    <x-card title="Simple List" class="mt-8">
-      <x-input-simple-list :collapsed="false" v-model="simpleList">
-        <template #default="{ item, index }">
-          <x-input-text :id="'value' + item.uid" v-model="item.value" />
+      </XInputList>
+    </XCard>
+    <XCard title="Simple List" class="mt-8">
+      <XInputSimpleList :collapsed="false" v-model="simpleList">
+        <template #default="{ item }">
+          <XInputText :id="'value' + item.uid" v-model="item.value" />
         </template>
-      </x-input-simple-list>
-      <div class="mt-8 prose max-w-none">
-        <pre>{{ examples.simpleList }}</pre>
-      </div>
-    </x-card>
+      </XInputSimpleList>
+    </XCard>
   </div>
 </template>
 <script>
@@ -85,28 +73,6 @@ export default {
         { name: "Filip", surname: "Papež" },
       ],
       simpleList: ["Lovro", "Irena", "Ema", "Filip"],
-      examples: {
-        list: `<x-input-list
-    :collapsed="false"
-    v-model="list"
-    :assign-missing-props="true"
-    :default="{ name: null, surname: null, toys: [] }">
-    <template #default="{ item, index }">
-        <div>
-            <x-input-label :for="'name' + item.uid">Name</x-input-label>
-            <div class="mt-1">
-            <x-input-text :id="'name' + item.uid" v-model="item.name" />
-            </div>
-        </div>
-        ... more inputs here
-    </template>
-</x-input-list>`,
-        simpleList: `<x-input-simple-list :collapsed="false" v-model="simpleList">
-    <template #default="{ item, index }">
-        <x-input-text :id="'value' + item.uid" v-model="item.value" />
-    </template>
-</x-input-simple-list>`,
-      },
     };
   },
 };

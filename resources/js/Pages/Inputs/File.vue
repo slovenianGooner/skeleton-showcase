@@ -1,6 +1,6 @@
 <template>
   <div class="p-8 max-w-screen-lg">
-    <x-page-header
+    <XPageHeader
       title="Inputs"
       :breadcrumbs="[
         {
@@ -14,42 +14,33 @@
       ]"
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
-    ></x-page-header>
+    ></XPageHeader>
 
     <!-- Inputs -->
-    <x-card class="mt-5" title="File Inputs">
-      <h3 class="font-semibold">File Input</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.fileInput }}</pre>
-      </div>
+    <XCard class="mt-5" title="File Inputs">
+      <h3 class="font-semibold mb-4">File Input</h3>
       <div>
-        <x-input-label for="file"> File </x-input-label>
+        <XInputLabel for="file"> File </XInputLabel>
         <div class="mt-1">
-          <x-input-file v-model="form.file" />
+          <XInputFile v-model="form.file" />
         </div>
       </div>
-      <h3 class="mt-8 font-semibold">File Input With Error</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.fileInputWithError }}</pre>
-      </div>
+      <h3 class="mt-8 font-semibold mb-4">File Input With Error</h3>
       <div>
-        <x-input-label for="file" :errors="errors.file"> File </x-input-label>
+        <XInputLabel for="file" :errors="errors.file"> File </XInputLabel>
         <div class="mt-1">
-          <x-input-file v-model="form.file" :errors="errors.file" />
-          <x-input-errors :errors="errors.file" />
+          <XInputFile v-model="form.file" :errors="errors.file" />
+          <XInputErrors :errors="errors.file" />
         </div>
       </div>
-      <h3 class="font-semibold mt-8">Multiple Files Input</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleFilesInput }}</pre>
-      </div>
+      <h3 class="font-semibold mt-8 mb-4">Multiple Files Input</h3>
       <div>
-        <x-input-label for="file"> Files </x-input-label>
+        <XInputLabel for="file"> Files </XInputLabel>
         <div class="mt-1">
-          <x-input-files v-model="form.files" />
+          <XInputFiles v-model="form.files" />
         </div>
       </div>
-    </x-card>
+    </XCard>
   </div>
 </template>
 <script>
@@ -62,27 +53,6 @@ export default {
       },
       errors: {
         file: ["The file is too big."],
-      },
-      examples: {
-        fileInput: `<div>
-    <x-input-label for="file"> File </x-input-label>
-    <div class="mt-1">
-        <x-input-file v-model="form.file" />
-    </div>
-</div>`,
-        fileInputWithError: `<div>
-    <x-input-label for="file" :errors="errors.file"> File </x-input-label>
-    <div class="mt-1">
-        <x-input-file v-model="form.file" :errors="errors.file" />
-        <x-input-errors :errors="errors.file" />
-    </div>
-</div>`,
-        multipleFilesInput: `<div>
-    <x-input-label for="file"> Files </x-input-label>
-    <div class="mt-1">
-        <x-input-files v-model="form.files" />
-    </div>
-</div>`,
       },
     };
   },

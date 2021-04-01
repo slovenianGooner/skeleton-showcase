@@ -1,6 +1,6 @@
 <template>
   <div class="p-8">
-    <x-page-header
+    <XPageHeader
       title="Inputs"
       :breadcrumbs="[
         {
@@ -15,55 +15,44 @@
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
     />
-    <x-card class="mt-5" :overflows="false" title="Custom Select">
+    <XCard class="mt-5" :overflows="false" title="Custom Select">
       <div>
-        <x-input-label>Country</x-input-label>
+        <XInputLabel>Country</XInputLabel>
         <div class="mt-1">
-          <x-input-custom-select
+          <XInputCustomSelect
             v-model="form.country"
             value-resolver="value"
             label-resolver="title"
             :options="countries"
           >
-          </x-input-custom-select>
+          </XInputCustomSelect>
         </div>
       </div>
-      <div class="prose max-w-none mt-8">
-        <pre>{{ examples.customSelect }}</pre>
-      </div>
-    </x-card>
-    <x-card class="mt-5" :overflows="false" title="Multiselect">
+    </XCard>
+    <XCard class="mt-5" :overflows="false" title="Multiselect">
       <div>
-        <x-input-label>Languages</x-input-label>
+        <XInputLabel>Languages</XInputLabel>
         <div class="mt-1">
-          <x-input-custom-select
+          <XInputCustomSelect
             multiple
             v-model="form.languages"
             :options="languages"
           />
         </div>
       </div>
-      <div class="prose max-w-none mt-8">
-        <pre>{{ examples.customSelect }}</pre>
-      </div>
-    </x-card>
-    <x-card class="mt-5" :overflows="false" title="Custom select with search">
+    </XCard>
+    <XCard class="mt-5" :overflows="false" title="Custom select with search">
       <div>
-        <x-input-label>Language</x-input-label>
+        <XInputLabel>Language</XInputLabel>
         <div class="mt-1">
-          <x-input-custom-select
+          <XInputCustomSelect
             v-model="form.language"
             :options="languages"
-            value-resolver="value"
-            label-resolver="title"
             :search="true"
           />
         </div>
       </div>
-      <div class="prose max-w-none mt-8">
-        <pre>{{ examples.customSelectWithSearch }}</pre>
-      </div>
-    </x-card>
+    </XCard>
   </div>
 </template>
 <script>
@@ -95,40 +84,6 @@ export default {
         "React",
         "TailwindCSS",
       ],
-      examples: {
-        customSelect: `<div>
-    <x-input-label>Country</x-input-label>
-    <div class="mt-1">
-        <x-input-custom-select
-            v-model="form.country"
-            value-resolver="value"
-            label-resolver="title"
-            :options="countries"
-        />
-    </div>
-</div>`,
-        multipleSelect: `<div>
-    <x-input-label>Languages</x-input-label>
-    <div class="mt-1">
-        <x-input-custom-select
-            multiple
-            v-model="form.languages"
-            :options="languages"
-          />
-    </div>
-</div>`,
-        customSelectWithSearch: `<div>
-    <x-input-label>Language</x-input-label>
-    <div class="mt-1">
-        <x-input-custom-select
-            v-model="form.language"
-            :options="languages"
-            :value-resolver="(item) => item"
-            :search="true"
-        />
-    </div>
-</div>`,
-      },
     };
   },
 };

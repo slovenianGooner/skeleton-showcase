@@ -1,5 +1,5 @@
 <template>
-  <x-auth-login title="Skelly Showcase" subtitle="Sign in to your account" />
+  <XAuthLogin title="Skelly Showcase" subtitle="Sign in to your account" />
 </template>
 <script>
 import GuestLayout from "../../Shared/GuestLayout";

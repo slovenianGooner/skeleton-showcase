@@ -1,6 +1,6 @@
 <template>
   <div class="p-8 max-w-screen-lg">
-    <x-page-header
+    <XPageHeader
       title="Inputs"
       :breadcrumbs="[
         {
@@ -14,18 +14,15 @@
       ]"
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
-    ></x-page-header>
+    ></XPageHeader>
 
     <!-- Selects -->
     <x-card class="mt-5" title="Selects">
-      <h3 class="font-semibold">Select Input</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.selectInput }}</pre>
-      </div>
+      <h3 class="font-semibold mb-4">Select Input</h3>
       <div>
-        <x-input-label for="country"> Country </x-input-label>
+        <XInputLabel for="country"> Country </XInputLabel>
         <div class="mt-1">
-          <x-input-select
+          <XInputSelect
             :options="countries"
             v-model="form.country"
             value-resolver="value"
@@ -33,16 +30,13 @@
           />
         </div>
       </div>
-      <h3 class="mt-8 font-semibold">Select Input With Error</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.selectInputWithError }}</pre>
-      </div>
+      <h3 class="mt-8 mb-4 font-semibold">Select Input With Error</h3>
       <div>
-        <x-input-label for="Country" :errors="errors.country">
+        <XInputLabel for="Country" :errors="errors.country">
           Country
-        </x-input-label>
+        </XInputLabel>
         <div class="mt-1">
-          <x-input-select
+          <XInputSelect
             :options="countries"
             v-model="form.country"
             value-resolver="value"
@@ -52,14 +46,11 @@
           <x-input-errors :errors="errors.country" />
         </div>
       </div>
-      <h3 class="mt-8 font-semibold">Select Input With Button</h3>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.selectInputWithButton }}</pre>
-      </div>
+      <h3 class="mt-8 mb-4 font-semibold">Select Input With Button</h3>
       <div>
-        <x-input-label for="language"> Language </x-input-label>
+        <XInputLabel for="language"> Language </XInputLabel>
         <div class="mt-1">
-          <x-input-select-button
+          <XInputSelectButton
             :options="languages"
             v-model="form.language"
             button="Submit"
@@ -90,45 +81,6 @@ export default {
       languages: ["PHP", "Javascript", "Vue", "Laravel"],
       errors: {
         country: ["The country field is required."],
-      },
-      examples: {
-        selectInput: `<div>
-    <x-input-label for="country"> Country </x-input-label>
-    <div class="mt-1">
-        <x-input-select
-            :options="countries"
-            v-model="form.country"
-            value-resolver="value"
-            label-resolver="title"
-        />
-    </div>
-</div>`,
-        selectInputWithError: `<div>
-    <x-input-label for="Country" :errors="errors.country">
-        Country
-    </x-input-label>
-    <div class="mt-1">
-        <x-input-select
-            :options="countries"
-            v-model="form.country"
-            value-resolver="value"
-            label-resolver="title"
-            :errors="errors.country"
-        />
-        <x-input-errors :errors="errors.country" />
-    </div>
-</div>`,
-        selectInputWithButton: `<div>
-    <x-input-label for="language"> Language </x-input-label>
-    <div class="mt-1">
-        <x-input-select-button
-            :options="languages"
-            v-model="form.language"
-            @click="say(form.language)"
-            button="Submit"
-        />
-    </div>
-</div>`,
       },
     };
   },

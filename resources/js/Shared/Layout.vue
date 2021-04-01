@@ -1,52 +1,49 @@
 <template>
-  <x-layout ref="layout">
+  <XLayout>
     <template #logo>
       <h1>Skelly Showcase</h1>
     </template>
     <template #navigation>
-      <x-nav-item inertia title="Home" icon="home" href="/" />
-      <x-nav-item title="Auth" icon="login">
-        <x-nav-item inertia title="Login" href="/auth/login" />
-        <x-nav-item
+      <XNavItem inertia title="Home" icon="OutlineHome" href="/" />
+      <XNavItem title="Auth" icon="OutlineLogin">
+        <XNavItem inertia title="Login" href="/auth/login" />
+        <XNavItem
           inertia
           title="Forgot Password"
           href="/auth/forgot-password"
         />
-        <x-nav-item
-          inertia
-          title="Reset Password"
-          href="/auth/reset-password"
-        />
-      </x-nav-item>
-      <x-nav-item inertia title="Alerts" icon="alert" href="/alerts" />
-      <x-nav-item inertia title="Buttons" icon="click" href="/buttons" />
-      <x-nav-item title="Inputs" icon="template">
-        <x-nav-item inertia title="Basic" href="/inputs/basic" />
-        <x-nav-item inertia title="Select" href="/inputs/select" />
-        <x-nav-item inertia title="Checkbox" href="/inputs/checkbox" />
-        <x-nav-item inertia title="File" href="/inputs/file" />
-        <x-nav-item inertia title="Photo" href="/inputs/photo" />
-        <x-nav-item inertia title="List" href="/inputs/list" />
-        <x-nav-item
-          inertia
-          title="Custom Select"
-          href="/inputs/custom-select"
-        />
-      </x-nav-item>
-      <x-nav-item inertia title="Modals" icon="annotation" href="/modals" />
-      <x-nav-item inertia title="Lists" icon="list" href="/lists" />
-      <x-nav-item inertia title="Misc" icon="sun" href="/misc" />
+        <XNavItem inertia title="Reset Password" href="/auth/reset-password" />
+      </XNavItem>
+      <XNavItem inertia title="Alerts" icon="OutlineBell" href="/alerts" />
+      <XNavItem
+        inertia
+        title="Buttons"
+        icon="SolidCursorClick"
+        href="/buttons"
+      />
+      <XNavItem title="Inputs" icon="SolidTemplate">
+        <XNavItem inertia title="Basic" href="/inputs/basic" />
+        <XNavItem inertia title="Select" href="/inputs/select" />
+        <XNavItem inertia title="Checkbox" href="/inputs/checkbox" />
+        <XNavItem inertia title="File" href="/inputs/file" />
+        <XNavItem inertia title="Photo" href="/inputs/photo" />
+        <XNavItem inertia title="List" href="/inputs/list" />
+        <XNavItem inertia title="Custom Select" href="/inputs/custom-select" />
+      </XNavItem>
+      <XNavItem
+        inertia
+        title="Modals"
+        icon="OutlineAnnotation"
+        href="/modals"
+      />
+      <XNavItem inertia title="Lists" icon="SolidCollection" href="/lists" />
+      <XNavItem inertia title="Misc" icon="OutlineSun" href="/misc" />
     </template>
     <template #loading>
-      <x-loading-screen v-model="loading" />
+      <XLoadingScreen v-model="loading" />
     </template>
-    <template>
-      <slot />
-    </template>
-    <template slot="modal">
-      <portal-target name="modal" multiple />
-    </template>
-  </x-layout>
+    <slot />
+  </XLayout>
 </template>
 <script>
 import { Inertia } from "@inertiajs/inertia";

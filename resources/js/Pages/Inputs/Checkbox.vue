@@ -1,6 +1,6 @@
 <template>
   <div class="p-8 max-w-screen-lg">
-    <x-page-header
+    <XPageHeader
       title="Inputs"
       :breadcrumbs="[
         {
@@ -14,20 +14,13 @@
       ]"
       @back="$inertia.get($event)"
       @navigate="$inertia.get($event)"
-    ></x-page-header>
+    ></XPageHeader>
 
     <!-- Inputs -->
-    <x-card class="mt-5" title="Checkboxes">
+    <XCard class="mt-5" title="Checkboxes">
       <h4 class="text-md font-semibold mb-4">Single Checkbox</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.singleCheckbox }}</pre>
-      </div>
       <div class="mb-8">
-        <x-input-checkbox
-          id="checked"
-          label="Notify me"
-          v-model="form.checked"
-        />
+        <XInputCheckbox id="checked" label="Notify me" v-model="form.checked" />
         <div class="mt-4 text-sm text-gray-700">
           <strong>Checked:</strong>
           {{ form.checked }}
@@ -35,16 +28,9 @@
       </div>
 
       <h4 class="text-md font-semibold mb-4">Multiple Checkboxes</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleCheckboxes }}</pre>
-      </div>
-      <h4>We are using this array as an example:</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleCheckboxesArray }}</pre>
-      </div>
       <div class="space-y-2">
-        <div v-for="(item, index) in allItems">
-          <x-input-checkbox
+        <div v-for="(item, index) in allItems" :key="index">
+          <XInputCheckbox
             :id="'checkedItem' + index"
             :label="item"
             v-model="form.checkedItems"
@@ -58,19 +44,12 @@
           form.checkedItems.length > 0 ? form.checkedItems.join(", ") : "None"
         }}
       </div>
-    </x-card>
-    <x-card class="mt-5" title="Radios">
+    </XCard>
+    <XCard class="mt-5" title="Radios">
       <h4 class="text-md font-semibold mb-4">Multiple Radios</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleRadios }}</pre>
-      </div>
-      <h4>We are using this array as an example:</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleCheckboxesArray }}</pre>
-      </div>
       <div class="space-y-2">
-        <div v-for="(item, index) in allItems">
-          <x-input-radio
+        <div v-for="(item, index) in allItems" :key="index">
+          <XInputRadio
             :id="'checkedRadioItem' + index"
             :label="item"
             v-model="form.checkedRadio"
@@ -88,14 +67,11 @@
         <strong>Selected:</strong>
         {{ form.checkedRadio ? form.checkedRadio : "None" }}
       </div>
-    </x-card>
-    <x-card class="mt-5" title="Toggles">
+    </XCard>
+    <XCard class="mt-5" title="Toggles">
       <h4 class="text-md font-semibold mb-4">Single Checkbox Toggle</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.singleToggle }}</pre>
-      </div>
       <div class="mb-8">
-        <x-input-checkbox-toggle
+        <XInputCheckboxToggle
           id="checkedToggle"
           label="Notify me"
           v-model="form.checked"
@@ -107,16 +83,9 @@
       </div>
 
       <h4 class="text-md font-semibold mb-4">Multiple Checkbox Toggles</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleToggles }}</pre>
-      </div>
-      <h4>We are using this array as an example:</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleCheckboxesArray }}</pre>
-      </div>
       <div class="space-y-2">
-        <div v-for="(item, index) in allItems">
-          <x-input-checkbox-toggle
+        <div v-for="(item, index) in allItems" :key="index">
+          <XInputCheckboxToggle
             :id="'checkedItemToggle' + index"
             :label="item"
             v-model="form.checkedItems"
@@ -131,16 +100,9 @@
         }}
       </div>
       <h4 class="text-md font-semibold mb-4">Multiple Radio Toggles</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleRadioToggles }}</pre>
-      </div>
-      <h4>We are using this array as an example:</h4>
-      <div class="prose max-w-none mt-2 mb-8">
-        <pre>{{ examples.multipleCheckboxesArray }}</pre>
-      </div>
       <div class="space-y-2">
-        <div v-for="(item, index) in allItems">
-          <x-input-radio-toggle
+        <div v-for="(item, index) in allItems" :key="index">
+          <XInputRadioToggle
             :id="'checkedRadioItemToggle' + index"
             :label="item"
             v-model="form.checkedRadio"
@@ -158,7 +120,7 @@
         <strong>Selected:</strong>
         {{ form.checkedRadio ? form.checkedRadio : "None" }}
       </div>
-    </x-card>
+    </XCard>
   </div>
 </template>
 <script>
@@ -172,55 +134,6 @@ export default {
       },
       allItems: ["Will Smith", "Christopher Waltz", "Brad Pitt"],
       errors: {},
-      examples: {
-        singleToggle: `<x-input-checkbox-toggle
-    id="checkedToggle"
-    label="Notify me"
-    v-model="form.checked"
-/>`,
-        multipleToggles: `<div v-for="(item, index) in allItems">
-    <x-input-checkbox-toggle
-        :id="'checkedItemToggle' + index"
-        :label="item"
-        v-model="form.checkedItems"
-        :value="item"
-    />
-</div>`,
-        multipleRadioToggles: `<div v-for="(item, index) in allItems">
-    <x-input-radio-toggle
-        :id="'checkedRadioItemToggle' + index"
-        :label="item"
-        v-model="form.checkedRadio"
-        :value="item"
-    />
-</div>`,
-        singleCheckbox: `<x-input-checkbox
-    id="checked"
-    label="Notify me"
-    v-model="form.checked"
-/>`,
-        multipleCheckboxesArray: `[
-    "Will Smith",
-    "Christopher Waltz",
-    "Brad Pitt"
-]`,
-        multipleCheckboxes: `<div v-for="(item, index) in allItems">
-    <x-input-checkbox
-        :id="'checkedItem' + index"
-        :label="item"
-        v-model="form.checkedItems"
-        :value="item"
-        />
-</div>`,
-        multipleRadios: `<div v-for="(item, index) in allItems">
-    <x-input-radio
-        :id="'checkedRadioItem' + index"
-        :label="item"
-        v-model="form.checkedRadio"
-        :value="item"
-        />
-</div>`,
-      },
     };
   },
 };
