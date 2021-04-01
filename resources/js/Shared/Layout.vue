@@ -1,5 +1,5 @@
 <template>
-  <XLayout>
+  <XLayout ref="layout">
     <template #logo>
       <h1>Skelly Showcase</h1>
     </template>
