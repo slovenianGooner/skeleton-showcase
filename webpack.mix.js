@@ -22,6 +22,7 @@ mix.webpackConfig((webpack) => {
         resolve: {
             alias: {
                 vue: path.resolve(__dirname, "node_modules/vue"),
+                "@": __dirname + "/node_modules/sg-skelly",
             },
         },
     };

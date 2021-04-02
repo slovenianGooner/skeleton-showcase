@@ -19,17 +19,10 @@ const app = createApp({
 }).use(plugin);
 
 import Skelly from "sg-skelly";
-Skelly.getComponents().forEach((component) => {
-    app.component(component.name, component.config);
-});
-
-Skelly.getSolidIcons().forEach((component) => {
-    app.component(component.name, component.config);
-});
-
-Skelly.getOutlineIcons().forEach((component) => {
-    app.component(component.name, component.config);
-});
+Skelly.installComponents(app)
+    .installSolidIcons(app)
+    .installOutlineIcons(app)
+    .installRichTextEditor(app);
 
 // Query
 const query = require("query-string");

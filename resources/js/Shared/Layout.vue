@@ -29,6 +29,8 @@
         <XNavItem inertia title="Photo" href="/inputs/photo" />
         <XNavItem inertia title="List" href="/inputs/list" />
         <XNavItem inertia title="Custom Select" href="/inputs/custom-select" />
+        <XNavItem inertia title="WYSIWYG" href="/inputs/wysiwyg" />
+        <XNavItem inertia title="Date Picker" href="/inputs/date-picker" />
       </XNavItem>
       <XNavItem
         inertia

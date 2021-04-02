@@ -38,6 +38,8 @@ Route::delayedInertia("inputs/file", "Inputs/File");
 Route::delayedInertia("inputs/photo", "Inputs/Photo");
 Route::delayedInertia("inputs/list", "Inputs/List");
 Route::delayedInertia("inputs/custom-select", "Inputs/CustomSelect");
+Route::delayedInertia("inputs/wysiwyg", "Inputs/WYSIWYG");
+Route::delayedInertia("inputs/date-picker", "Inputs/DatePicker");
 Route::delayedInertia("modals", "Modals");
 
 Route::get("dynamic-options", function () {
