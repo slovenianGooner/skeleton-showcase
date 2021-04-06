@@ -103,7 +103,9 @@
   </div>
 </template>
 <script>
+import { XPageHeader, XCard, XAlertBanner, XAlertFormError } from "sg-skelly";
 export default {
+  components: { XPageHeader, XCard, XAlertBanner, XAlertFormError },
   data() {
     return {
       bottomBanner: true,

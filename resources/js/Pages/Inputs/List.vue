@@ -63,7 +63,23 @@
   </div>
 </template>
 <script>
+import {
+  XPageHeader,
+  XCard,
+  XInputLabel,
+  XInputText,
+  XInputSimpleList,
+  XInputList,
+} from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XInputLabel,
+    XInputText,
+    XInputSimpleList,
+    XInputList,
+  },
   data() {
     return {
       list: [

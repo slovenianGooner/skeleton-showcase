@@ -193,7 +193,27 @@
   </div>
 </template>
 <script>
+import {
+  XAlertSuccess,
+  XButtonForm,
+  XButtonLink,
+  XCard,
+  XModal,
+  XModalConfirm,
+  XModalFullscreen,
+  XPageHeader,
+} from "sg-skelly";
 export default {
+  components: {
+    XAlertSuccess,
+    XButtonForm,
+    XButtonLink,
+    XCard,
+    XModal,
+    XModalConfirm,
+    XModalFullscreen,
+    XPageHeader,
+  },
   methods: {
     submit() {
       this.$inertia.post("modal");

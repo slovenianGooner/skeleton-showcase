@@ -11,3 +11,11 @@
     <slot />
   </div>
 </template>
+<script>
+import { XAlertBanner } from "sg-skelly";
+export default {
+  components: {
+    XAlertBanner,
+  },
+};
+</script>

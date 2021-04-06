@@ -56,7 +56,14 @@
   </div>
 </template>
 <script>
+import { XPageHeader, XCard, XInputLabel, XInputCustomSelect } from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XInputLabel,
+    XInputCustomSelect,
+  },
   data() {
     return {
       form: {

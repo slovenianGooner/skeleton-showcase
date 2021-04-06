@@ -50,7 +50,15 @@
   </div>
 </template>
 <script>
+import { XPageHeader, XCard, XButtonForm, XSection, XToast } from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XButtonForm,
+    XSection,
+    XToast,
+  },
   data() {
     return {
       showToast: false,

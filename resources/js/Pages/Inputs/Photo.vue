@@ -54,7 +54,23 @@
   </div>
 </template>
 <script>
+import {
+  XPageHeader,
+  XInputPhoto,
+  XInputPhotos,
+  XCard,
+  XInputLabel,
+  XInputErrors,
+} from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XInputPhoto,
+    XInputPhotos,
+    XCard,
+    XInputLabel,
+    XInputErrors,
+  },
   data() {
     return {
       form: {

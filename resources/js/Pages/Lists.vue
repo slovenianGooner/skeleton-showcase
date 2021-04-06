@@ -104,7 +104,6 @@
             "
           />
           <XButtonForm @click="$refs.filter.toggle()" no-ring>
-            <SolidFilterIcon class="w-5 h-5 -ml-1.5 mr-1.5 text-gray-400" />
             Filter
           </XButtonForm>
         </div>
@@ -206,9 +205,31 @@
   </div>
 </template>
 <script>
+import {
+  XPageHeader,
+  XListCard,
+  XListFilter,
+  XListPagination,
+  XListSearch,
+  XListSeparateCard,
+  XInputLabel,
+  XInputSelect,
+  XButtonForm,
+} from "sg-skelly";
 import ListCardContent from "../Shared/Demo/ListCardContent.vue";
 export default {
-  components: { ListCardContent },
+  components: {
+    XPageHeader,
+    ListCardContent,
+    XListCard,
+    XListFilter,
+    XListPagination,
+    XListSearch,
+    XListSeparateCard,
+    XInputLabel,
+    XInputSelect,
+    XButtonForm,
+  },
   data() {
     return {
       filters: ["type", "job"],

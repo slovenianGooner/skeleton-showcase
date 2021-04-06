@@ -18,11 +18,11 @@ const app = createApp({
         }),
 }).use(plugin);
 
-import Skelly from "sg-skelly";
-Skelly.installComponents(app)
-    .installSolidIcons(app)
-    .installOutlineIcons(app)
-    .installRichTextEditor(app);
+// Make global import from Skelly
+// import Skelly from "sg-skelly";
+// Object.keys(Skelly).forEach((name) => {
+//     app.component(name, Skelly[name]);
+// });
 
 // Query
 const query = require("query-string");

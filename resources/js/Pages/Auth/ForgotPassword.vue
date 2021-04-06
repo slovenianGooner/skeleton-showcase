@@ -3,7 +3,12 @@
 </template>
 <script>
 import GuestLayout from "../../Shared/GuestLayout";
+import { XAuthForgotPassword } from "sg-skelly";
+
 export default {
+  components: {
+    XAuthForgotPassword,
+  },
   layout: GuestLayout,
 };
 </script>

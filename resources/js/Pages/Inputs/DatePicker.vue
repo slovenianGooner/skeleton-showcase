@@ -51,7 +51,25 @@
   </div>
 </template>
 <script>
+import {
+  XPageHeader,
+  XCard,
+  XInputLabel,
+  XInputDatePicker,
+  XInputDateTimePicker,
+  XInputTimePicker,
+  XInputRangePicker,
+} from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XInputLabel,
+    XInputDatePicker,
+    XInputDateTimePicker,
+    XInputTimePicker,
+    XInputRangePicker,
+  },
   data() {
     return {
       form: {

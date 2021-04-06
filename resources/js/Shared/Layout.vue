@@ -4,8 +4,8 @@
       <h1>Skelly Showcase</h1>
     </template>
     <template #navigation>
-      <XNavItem inertia title="Home" icon="OutlineHome" href="/" />
-      <XNavItem title="Auth" icon="OutlineLogin">
+      <XNavItem inertia title="Home" href="/" />
+      <XNavItem title="Auth">
         <XNavItem inertia title="Login" href="/auth/login" />
         <XNavItem
           inertia
@@ -14,14 +14,9 @@
         />
         <XNavItem inertia title="Reset Password" href="/auth/reset-password" />
       </XNavItem>
-      <XNavItem inertia title="Alerts" icon="OutlineBell" href="/alerts" />
-      <XNavItem
-        inertia
-        title="Buttons"
-        icon="SolidCursorClick"
-        href="/buttons"
-      />
-      <XNavItem title="Inputs" icon="SolidTemplate">
+      <XNavItem inertia title="Alerts" href="/alerts" />
+      <XNavItem inertia title="Buttons" href="/buttons" />
+      <XNavItem title="Inputs">
         <XNavItem inertia title="Basic" href="/inputs/basic" />
         <XNavItem inertia title="Select" href="/inputs/select" />
         <XNavItem inertia title="Checkbox" href="/inputs/checkbox" />
@@ -32,14 +27,9 @@
         <XNavItem inertia title="WYSIWYG" href="/inputs/wysiwyg" />
         <XNavItem inertia title="Date Picker" href="/inputs/date-picker" />
       </XNavItem>
-      <XNavItem
-        inertia
-        title="Modals"
-        icon="OutlineAnnotation"
-        href="/modals"
-      />
-      <XNavItem inertia title="Lists" icon="SolidCollection" href="/lists" />
-      <XNavItem inertia title="Misc" icon="OutlineSun" href="/misc" />
+      <XNavItem inertia title="Modals" href="/modals" />
+      <XNavItem inertia title="Lists" href="/lists" />
+      <XNavItem inertia title="Misc" href="/misc" />
     </template>
     <template #loading>
       <XLoadingScreen v-model="loading" />
@@ -49,8 +39,14 @@
 </template>
 <script>
 import { Inertia } from "@inertiajs/inertia";
+import { XNavItem, XLoadingScreen, XLayout } from "sg-skelly";
 
 export default {
+  components: {
+    XNavItem,
+    XLoadingScreen,
+    XLayout,
+  },
   created() {
     let timeout = null;
 

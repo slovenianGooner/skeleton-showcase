@@ -124,7 +124,27 @@
   </div>
 </template>
 <script>
+import {
+  XPageHeader,
+  XCard,
+  XInputCheckbox,
+  XInputCheckboxToggle,
+  XInputErrors,
+  XInputLabel,
+  XInputRadio,
+  XInputRadioToggle,
+} from "sg-skelly";
 export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XInputCheckbox,
+    XInputCheckboxToggle,
+    XInputErrors,
+    XInputLabel,
+    XInputRadio,
+    XInputRadioToggle,
+  },
   data() {
     return {
       form: {

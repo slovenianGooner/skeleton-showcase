@@ -70,3 +70,14 @@
     </XCard>
   </div>
 </template>
+<script>
+import { XPageHeader, XCard, XButtonForm, XButtonLink } from "sg-skelly";
+export default {
+  components: {
+    XPageHeader,
+    XCard,
+    XButtonForm,
+    XButtonLink,
+  },
+};
+</script>
