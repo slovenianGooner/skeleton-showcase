@@ -27,6 +27,7 @@
         <XNavItem inertia title="WYSIWYG" href="/inputs/wysiwyg" />
         <XNavItem inertia title="Code" href="/inputs/code" />
         <XNavItem inertia title="Autocomplete" href="/inputs/autocomplete" />
+        <XNavItem inertia title="TreeSelect" href="/inputs/treeselect" />
         <XNavItem inertia title="Date Picker" href="/inputs/date-picker" />
       </XNavItem>
       <XNavItem inertia title="Modals" href="/modals" />

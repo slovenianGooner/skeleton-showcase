@@ -42,6 +42,7 @@ Route::delayedInertia("inputs/wysiwyg", "Inputs/WYSIWYG");
 Route::delayedInertia("inputs/code", "Inputs/Code");
 Route::delayedInertia("inputs/date-picker", "Inputs/DatePicker");
 Route::delayedInertia("inputs/autocomplete", "Inputs/Autocomplete");
+Route::delayedInertia("inputs/treeselect", "Inputs/TreeSelect");
 Route::delayedInertia("modals", "Modals");
 
 Route::get("dynamic-options", function () {
