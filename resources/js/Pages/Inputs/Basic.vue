@@ -127,7 +127,7 @@
             <template #leading>
               <XInputCustomSelect
                 class="!mt-0"
-                button-class="rounded-r-none border-r-0 focus:ring-0 focus:border-gray-300 w-32"
+                button-class="rounded-r-none border-r-0 w-32"
                 v-model="form.country"
                 value-resolver="value"
                 label-resolver="title"
