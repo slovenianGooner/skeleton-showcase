@@ -47,10 +47,43 @@
         <XButtonForm @click="showToast = true"> Show toast </XButtonForm>
       </div>
     </XCard>
+    <XCard class="mt-5" title="Nestable">
+      <XNestable :items="nestableItems" @sort="say($event)" class="space-y-2">
+        <template #default="{ item, toggle }">
+          <div class="border rounded-md flex divide-x divide-gray-300">
+            <XNestableHandle
+              class="px-4 py-2 flex items-center justify-items-center"
+            />
+            <div class="flex-1 px-4 py-2 hover:bg-gray-50">
+              <div>{{ item.name }}</div>
+              <div class="text-xs underline flex space-x-2">
+                <button>Edit</button>
+                <button>Delete</button>
+              </div>
+            </div>
+            <XNestableToggle
+              :item="item"
+              @click="toggle(item)"
+              class="px-4 py-2 flex items-center justify-items-center"
+            />
+          </div>
+        </template>
+      </XNestable>
+    </XCard>
   </div>
 </template>
 <script>
-import { XPageHeader, XCard, XButtonForm, XSection, XToast } from "sg-skelly";
+import {
+  XPageHeader,
+  XCard,
+  XButtonForm,
+  XSection,
+  XToast,
+  XNestable,
+  XNestableHandle,
+  XNestableToggle,
+} from "sg-skelly";
+
 export default {
   components: {
     XPageHeader,
@@ -58,10 +91,47 @@ export default {
     XButtonForm,
     XSection,
     XToast,
+    XNestable,
+    XNestableHandle,
+    XNestableToggle,
   },
   data() {
     return {
       showToast: false,
+      nestableItems: [
+        {
+          name: "One",
+          id: 1,
+          isOpen: false,
+          children: [
+            { name: "One-One", id: 11 },
+            { name: "One-Two", id: 12 },
+            {
+              name: "One-Three",
+              id: 13,
+              isOpen: false,
+              children: [
+                {
+                  name: "One-Three-One",
+                  id: 131,
+                  isOpen: false,
+                  children: [{ name: "One-Three-One-One", id: 1311 }],
+                },
+              ],
+            },
+          ],
+        },
+        {
+          name: "Two",
+          id: 2,
+          isOpen: false,
+          children: [
+            { name: "Two-One", id: 21 },
+            { name: "Two-Two", id: 22 },
+            { name: "Two-Three", id: 23 },
+          ],
+        },
+      ],
     };
   },
 };

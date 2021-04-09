@@ -3,6 +3,12 @@
  * For licensing, see LICENSE.md.
  */
 
+/**
+ * vue3-code-editor
+ * (c) 2021 oivasenk
+ * @license MIT
+ */
+
 /**!
  * Sortable 1.10.2
  * @author	RubaXa   <trash@rubaxa.org>

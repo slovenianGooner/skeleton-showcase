@@ -19,7 +19,7 @@ const app = createApp({
 }).use(plugin);
 
 // Make global import from Skelly
-// import Skelly from "sg-skelly";
+// import * as Skelly from "sg-skelly";
 // Object.keys(Skelly).forEach((name) => {
 //     app.component(name, Skelly[name]);
 // });

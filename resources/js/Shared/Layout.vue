@@ -25,6 +25,8 @@
         <XNavItem inertia title="List" href="/inputs/list" />
         <XNavItem inertia title="Custom Select" href="/inputs/custom-select" />
         <XNavItem inertia title="WYSIWYG" href="/inputs/wysiwyg" />
+        <XNavItem inertia title="Code" href="/inputs/code" />
+        <XNavItem inertia title="Autocomplete" href="/inputs/autocomplete" />
         <XNavItem inertia title="Date Picker" href="/inputs/date-picker" />
       </XNavItem>
       <XNavItem inertia title="Modals" href="/modals" />

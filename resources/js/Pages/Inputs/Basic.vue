@@ -17,7 +17,7 @@
     ></XPageHeader>
 
     <!-- Inputs -->
-    <XCard class="mt-5" title="Basic Inputs">
+    <XCard class="mt-5" title="Basic Inputs" :overflows="false">
       <div class="prose prose-red">
         <p>
           This covers basic input elements, such as a text input, select, etc.
@@ -64,6 +64,83 @@
           />
         </div>
       </div>
+      <h3 class="mt-8 mb-4 font-semibold">
+        Text Input With Leading and trailing add-on
+      </h3>
+      <div>
+        <XInputLabel for="username"> Price </XInputLabel>
+        <div class="mt-1">
+          <XInputTextGroup
+            type="text"
+            v-model="form.username"
+            @click="say(form.username)"
+            no-ring
+          >
+            <template #leading>
+              <div
+                class="px-4 py-2 text-sm bg-white rounded-l-md border border-r-0 border-gray-300 inline-flex items-center font-medium shadow-sm focus:outline-none"
+              >
+                &dollar;
+              </div>
+            </template>
+            <template #trailing>
+              <div
+                class="px-4 py-2 text-sm bg-white rounded-r-md border border-l-0 border-gray-300 inline-flex items-center font-medium shadow-sm focus:outline-none"
+              >
+                USD
+              </div>
+            </template>
+          </XInputTextGroup>
+        </div>
+      </div>
+      <h3 class="mt-8 mb-4 font-semibold">
+        Text Input With select trailing add-on
+      </h3>
+      <div>
+        <XInputLabel for="username"> Price </XInputLabel>
+        <div class="mt-1">
+          <XInputTextGroup type="text" v-model="form.price" no-ring>
+            <template #trailing>
+              <XInputCustomSelect
+                class="!mt-0"
+                button-class="rounded-l-none border-l-0 focus:ring-0 focus:border-gray-300 w-32"
+                v-model="form.country"
+                value-resolver="value"
+                label-resolver="title"
+                :options="countries"
+              >
+              </XInputCustomSelect>
+            </template>
+          </XInputTextGroup>
+        </div>
+        <div class="mt-2">
+          Price: {{ form.price }}, Country: {{ form.country }}
+        </div>
+      </div>
+      <h3 class="mt-8 mb-4 font-semibold">
+        Text Input With select leading add-on
+      </h3>
+      <div>
+        <XInputLabel for="username"> Price </XInputLabel>
+        <div class="mt-1">
+          <XInputTextGroup type="text" v-model="form.price" no-ring>
+            <template #leading>
+              <XInputCustomSelect
+                class="!mt-0"
+                button-class="rounded-r-none border-r-0 focus:ring-0 focus:border-gray-300 w-32"
+                v-model="form.country"
+                value-resolver="value"
+                label-resolver="title"
+                :options="countries"
+              >
+              </XInputCustomSelect>
+            </template>
+          </XInputTextGroup>
+        </div>
+        <div class="mt-2">
+          Price: {{ form.price }}, Country: {{ form.country }}
+        </div>
+      </div>
     </XCard>
   </div>
 </template>
@@ -76,6 +153,8 @@ import {
   XInputText,
   XInputTextarea,
   XInputTextButton,
+  XInputTextGroup,
+  XInputCustomSelect,
 } from "sg-skelly";
 export default {
   components: {
@@ -86,12 +165,26 @@ export default {
     XInputText,
     XInputTextarea,
     XInputTextButton,
+    XInputTextGroup,
+    XInputCustomSelect,
   },
   data() {
     return {
+      countries: [
+        {
+          value: "AT",
+          title: "Austria",
+        },
+        {
+          value: "AU",
+          title: "Australia",
+        },
+      ],
       form: {
         username: null,
         code: null,
+        price: null,
+        country: "AU",
       },
       errors: {
         username: ["The username field is required."],
