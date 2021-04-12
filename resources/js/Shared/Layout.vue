@@ -30,6 +30,7 @@
         <XNavItem inertia title="TreeSelect" href="/inputs/treeselect" />
         <XNavItem inertia title="Date Picker" href="/inputs/date-picker" />
         <XNavItem inertia title="Tags" href="/inputs/tags" />
+        <XNavItem inertia title="Blocks" href="/inputs/blocks" />
       </XNavItem>
       <XNavItem inertia title="Modals" href="/modals" />
       <XNavItem inertia title="Lists" href="/lists" />
