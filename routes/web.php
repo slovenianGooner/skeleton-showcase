@@ -39,7 +39,6 @@ Route::delayedInertia("inputs/photo", "Inputs/Photo");
 Route::delayedInertia("inputs/list", "Inputs/List");
 Route::delayedInertia("inputs/custom-select", "Inputs/CustomSelect");
 Route::delayedInertia("inputs/wysiwyg", "Inputs/WYSIWYG");
-Route::delayedInertia("inputs/code", "Inputs/Code");
 Route::delayedInertia("inputs/date-picker", "Inputs/DatePicker");
 Route::delayedInertia("inputs/autocomplete", "Inputs/Autocomplete");
 Route::delayedInertia("inputs/treeselect", "Inputs/TreeSelect");
